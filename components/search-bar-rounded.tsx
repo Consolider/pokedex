@@ -23,6 +23,7 @@ export default function SearchBarRounded() {
         <div className="relative inline-block">
             <input
                 type="text"
+                aria-label="Search for a pokèmon"
                 placeholder="Search for a pokèmon..."
                 className="py-2 px-4 w-[400px] border"
                 onChange={(e) => {

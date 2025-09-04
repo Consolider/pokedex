@@ -11,7 +11,7 @@ const metadata: Metadata = {
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  searchParams: Promise<{ [key: string]: string | undefined }>
 }) {
   
   const { query } = await searchParams

@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 export default async function Types({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  searchParams: Promise<{ [key: string]: string | undefined }>
 }) {
   
-  const { pokeType } = await searchParams
-  //console.log(pokeType)
+  const { type } = await searchParams
+  console.log(type)
 
   return (
     <section className="flex flex-col items-center gap-4 bg-gradient-to-br [background-image:linear-gradient(-10deg,_#C97FE4,_#AECDF6)] p-14">
       <h2 className="text-center mt-14 text-8xl font-extrabold text-transparent bg-gradient-to-r from-purple-800 to-blue-800 [background-clip:text]">Chech out all types of types!</h2>
       <p className="text-center text-black text-xl">Check out all Pokémons in a specific type. Click <br /> on a type to list all Pokémons for it.</p>
         <TypeBtn />
-        {(pokeType && pokeType !== "") ?<CardType typesInput={pokeType}/>: <CardEmpty />}
+        {(type && type !== "") ?<CardType typesInput={type}/>: <CardEmpty />}
         {/* <CardType typesInput={pokeType} /> */}
     </section>
   )

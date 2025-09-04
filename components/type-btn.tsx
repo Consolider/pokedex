@@ -18,7 +18,7 @@ export default function TypeBtn() {
     // params.set("random", randomId.toString());
 
     const pokeType = "grass"
-    params.set("query", pokeType.toString());
+    params.set("type", pokeType.toString());
 
     router.push(`${pathname}?${params.toString()}`);
   }

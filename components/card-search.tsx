@@ -1,5 +1,4 @@
 import styles from "./card.module.css"
-import Link from "next/link";
 import Image from "next/image";
 import { PokemonQL } from "@/lib/interfaces";
 import { pokemonQuerySearch } from "@/lib/data/pokemon";
@@ -23,14 +22,14 @@ return (
       {p.pokemon.map((poke, i) => (
         <li key={i} className={styles.card}>
           <div className={styles.card__content}>
-          <Image
+            {poke.pokemonsprites[0].sprites && <Image
             className={`border border-${poke.pokemontypes[0].type.name}`}
             src={poke.pokemonsprites[0].sprites} // An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
             key={i}
-            alt="pokemon"
+            alt={`Image for ${poke.name}`}
             width={150}
             height={150}
-          />
+          />}
             <p className={`id id-${poke.pokemontypes[0].type.name}`}>#{poke.id}</p>
             <h3 className={styles.card__title}>{CapitalizeFirstLetter(poke.name)}</h3>
             <div className={styles.card__tag_container}>

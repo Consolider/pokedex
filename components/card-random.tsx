@@ -1,5 +1,4 @@
 import styles from "./card.module.css"
-import Link from "next/link";
 import Image from "next/image";
 import { PokemonQL } from "@/lib/interfaces";
 import { pokemonQuery } from "@/lib/data/pokemon";
@@ -20,7 +19,6 @@ export default async function CardRandom({id}: {id: string}) {
 
 return (
   <div className={`${styles.card} grid grid-cols-[repeat(auto-fit,minmax(15ch,27ch))] content-stretch justify-center">`}>
-    <Link href={`/pokedex/${p.id}`}>
       <div className={styles.card__content}>
         <Image
           className={`border border-${p.pokemontypes[0].type.name}`}
@@ -47,6 +45,5 @@ return (
             ))}
         </ul>
       </footer>
-    </Link>
   </div>
 )};

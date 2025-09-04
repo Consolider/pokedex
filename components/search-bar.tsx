@@ -8,6 +8,7 @@ export default function Page() {
       <Form action="/search">
         <input
           name="query"
+          aria-label="Search for a pokèmon"
           placeholder="Search for a pokèmon..."
           className={styles.input}
         />

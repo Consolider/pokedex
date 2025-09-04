@@ -1,5 +1,4 @@
 import styles from "./card.module.css"
-import Link from "next/link";
 import Image from "next/image";
 import { PokemonQL } from "@/lib/interfaces";
 import { pokemonQueryTypes } from "@/lib/data/pokemon";
@@ -16,13 +15,9 @@ export default async function CardType({typesInput}: {typesInput: string}) {
 
  const results : PokemonQL = await response.json();
  const p = results.data
- //console.log(results.data.pokemon[0].pokemontypes[0].type.name)
- //console.log(`TypesInput: ${typesInput}`)
 
 return (
 <div className="w-[100%]">
-
-
     <ul className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(15ch,35ch))] content-stretch justify-center">
       {p.pokemon.map((poke, i) => (
         <li key={i} className={styles.card}>
@@ -31,7 +26,7 @@ return (
             className={`border border-${poke.pokemontypes[0].type.name}`}
             src={poke.pokemonsprites[0].sprites} // An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
             key={i}
-            alt="pokemon"
+            alt={`Image for ${poke.name}`}
             width={150}
             height={150}
           />
@@ -56,7 +51,5 @@ return (
         </li>
         ))}
     </ul>
- 
-
 </div>
 )};
