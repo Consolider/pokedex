@@ -44,7 +44,7 @@ return (
             <h3 className={styles.card__title}>{CapitalizeFirstLetter(poke.name)}</h3>
             <div className={styles.card__tag_container}>
               {poke.pokemontypes.map((t) => (
-                <p className={`badge badge-${t.type.name}`}>{t.type.name}</p>
+                <p key={t.type.name} className={`badge badge-${t.type.name}`}>{t.type.name}</p>
               ))}
             </div>
           </div>
