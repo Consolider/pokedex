@@ -3,7 +3,7 @@ import SearchBarRounded from "@/components/search-bar-rounded";
 import CardSearch from "@/components/card-search";
 import CardEmpty from "@/components/card-empty";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Pokédex | Search",
   description: "A search site for Pokemons.",
 };

@@ -5,7 +5,7 @@ import CardEmpty from "@/components/card-empty";
 import CardRandom from "@/components/card-random";
 import RandomPokemonBtn from "@/components/random-btn";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Pokédex",
   description: "A site for Pokemon data.",
 };
