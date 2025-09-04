@@ -1,0 +1,11 @@
+.navMain {
+    padding: 1.6rem 1rem;
+    font-size: large;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    &a:hover {
+        background: #bda2ec;
+    }
+}

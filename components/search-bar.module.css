@@ -1,0 +1,38 @@
+.container {
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 3rem;
+    position: relative;
+}
+
+.input {
+    width: 800px;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 1px 5px 8px 1px #ccc;
+    font-size: 1.5rem;
+
+    /* padding-right: 40px; /* Space for the button */
+
+}
+
+.button {
+    position: absolute;
+    /* right: 56px; /* Position the button inside the input */
+    right: 560px; /* If .container 'display: flex;' */
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent; /* Make background transparent */
+    border: none; /* Remove border */
+    cursor: pointer;
+}
+
+.image {
+    padding: 8px 15px;
+    background-color: #637cce;
+    border-radius: 5px;
+}
