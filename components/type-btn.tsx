@@ -10,14 +10,10 @@ export default function TypeBtn() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleClick = async () => {
+  const handleClick = async (type: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    // const maxPokemonId = 1025;
-    // const randomId = Math.floor(Math.random() * maxPokemonId) + 1;
-    // params.set("random", randomId.toString());
-
-    const pokeType = "grass"
+    const pokeType = type;
     params.set("type", pokeType.toString());
 
     router.push(`${pathname}?${params.toString()}`);
@@ -29,7 +25,7 @@ export default function TypeBtn() {
         <button
             key={type}
             className={`badge badge-${type} p-2 pl-6 pr-6 m-1 cursor-pointer text-xl text-white rounded-full font-bold flex items-center justify-center gap-1`}
-            onClick={handleClick}
+            onClick={() => handleClick(type)}
         >
         {CapitalizeFirstLetter(type)}
         </button>

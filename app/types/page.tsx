@@ -23,7 +23,6 @@ export default async function Types({
       <p className="text-center text-black text-xl">Check out all Pokémons in a specific type. Click <br /> on a type to list all Pokémons for it.</p>
         <TypeBtn />
         {(type && type !== "") ?<CardType typesInput={type}/>: <CardEmpty />}
-        {/* <CardType typesInput={pokeType} /> */}
     </section>
   )
 }
