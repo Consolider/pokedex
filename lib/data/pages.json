@@ -5,10 +5,6 @@
             "label": "Home"
         },
         {
-            "href": "/pokedex",
-            "label": "Pokedex"
-        },
-        {
             "href": "/types",
             "label": "Types"
         },
