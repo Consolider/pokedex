@@ -1,19 +1,8 @@
 import "@/app/globals.css";
 import styles from "./card.module.css"
-import Link from "next/link";
 import Image from "next/image";
-import { PokemonQL } from "@/lib/interfaces";
-import { pokemonQueryFeatured } from "@/lib/data/pokemon";
 
 export default async function Featured(){
-//     const response = await fetch("https://graphql.pokeapi.co/v1beta2", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({query:pokemonQueryFeatured})
-//     })
-//     const results : PokemonQL = await response.json();
 
   return (
     <div className={styles.container}>
