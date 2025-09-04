@@ -19,13 +19,24 @@ export default async function CardRandom({id}: {id: string}) {
 return (
   <div className={`${styles.card} grid grid-cols-[repeat(auto-fit,minmax(15ch,27ch))] content-stretch justify-center">`}>
       <div className={styles.card__content}>
-        <Image
-          className={`border border-${p.pokemontypes[0].type.name}`}
-          src={p.pokemonsprites[0].sprites}
-          alt={p.name}
-          width={150}
-          height={150}
-        />
+          {/* Prevent Error: An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. */}
+          {(p.pokemonsprites[0].sprites && p.pokemonsprites[0].sprites !== "") ?
+          <Image
+            className={`border border-${p.pokemontypes[0].type.name}`}
+            src={p.pokemonsprites[0].sprites} 
+            key={p.id}
+            alt={`Image for ${p.name}`}
+            width={150}
+            height={150}
+          />:
+          <Image
+            className={`border border-${p.pokemontypes[0].type.name}`}
+            src="/Dice3.png"
+            key={p.id}
+            alt={`Image for ${p.name}`}
+            width={150}
+            height={150}
+          />}
         <p className={`id id-${p.pokemontypes[0].type.name}`}>#{p.id}</p>
         <h3 className={styles.card__title}>{CapitalizeFirstLetter(p.name)}</h3>
         <div className={styles.card__tag_container}>
