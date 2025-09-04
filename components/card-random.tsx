@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PokemonQL } from "@/lib/interfaces";
 import { pokemonQuery } from "@/lib/data/pokemon";
 import { CapitalizeFirstLetter } from "@/lib/util";
-import TypeBadge, { TypeBorder, TypeId } from "./TypeBadge";
 
 export default async function CardRandom({id}: {id: string}) {
   const response = await fetch("https://graphql.pokeapi.co/v1beta2", {
@@ -27,10 +26,12 @@ return (
           width={150}
           height={150}
         />
-      <TypeId name={p.pokemontypes[0].type.name} id={p.id} />
+        <p className={`id id-${p.pokemontypes[0].type.name}`}>#{p.id}</p>
         <h3 className={styles.card__title}>{CapitalizeFirstLetter(p.name)}</h3>
         <div className={styles.card__tag_container}>
-          <TypeBadge name={p.pokemontypes[0].type.name} />
+          {p.pokemontypes.map((t) => (
+              <p className={`badge badge-${t.type.name}`}>{t.type.name}</p>
+            ))}
         </div>
       </div>
       <footer className={styles.card__footer}>

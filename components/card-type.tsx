@@ -33,7 +33,9 @@ return (
             <p className={`id id-${poke.pokemontypes[0].type.name}`}>#{poke.id}</p>
             <h3 className={styles.card__title}>{CapitalizeFirstLetter(poke.name)}</h3>
             <div className={styles.card__tag_container}>
-                <p className={`badge badge-${poke.pokemontypes[0].type.name}`}>{poke.pokemontypes[0].type.name}</p>
+                {poke.pokemontypes.map((t) => (
+                  <p className={`badge badge-${t.type.name}`}>{t.type.name}</p>
+                ))}
             </div>
           </div>
           <footer className={styles.card__footer}>
